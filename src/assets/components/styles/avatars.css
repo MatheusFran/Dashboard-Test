@@ -2,6 +2,11 @@
 .avatar-container {
     position: relative;
     display: inline-block; 
+    position: fixed;
+  top: 0; 
+  right: 0; 
+  margin: 10px; 
+  z-index: 1000; 
 }
 
 .avatar {
@@ -19,7 +24,7 @@
 .menuItens {
     position: absolute;
     top: 60px;
-    left: 2px;
+    left: -80px;
     z-index: 100;
     background-color: #ffffff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
