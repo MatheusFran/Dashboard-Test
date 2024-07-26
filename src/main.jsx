@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './assets/components/pages/Home';
 import Dashboards from './assets/components/pages/Dashboards';
+import Settings from './assets/components/pages/settings';
+
 
 
 // Configuração das rotas
@@ -13,12 +15,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: '', // Rota padrão Home
+        path: '/', // Rota padrão Home
         element: <Home />
       },
       {
-        path: 'dashboard',
+        path: '/dashboard',
         element: <Dashboards />
+      },
+      {
+        path: '/settings',
+        element: <Settings />
       }
     ]
   }

@@ -9,6 +9,7 @@ import { Anchor, Dashboard } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import Home from './pages/Home';
 import Dashboards from './pages/Dashboards';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -18,32 +19,32 @@ const Sidebar = () => {
 
     const [view, setView] = useState('home'); // Estado para controlar a visualização atual
 
-    // const renderView = () => {
-    //     switch (view) {
-    //         case 'home':
-    //             return <Home />
-    //         case 'dashboard':
-    //             return <Dashboards />;
-    //         default:
-    //             return <NotFound />;
-    //     }
-    // };
+    const renderView = () => {
+        switch (view) {
+            case 'home':
+                return <Home />
+            case 'dashboard':
+                return <Dashboards />;
+            default:
+                return <NotFound />;
+        }
+    };
 
 
     return (
         <>
             <div className='sidebar-left'>
                 <div className='sidebar-text'> <BarChartIcon sx={{ color: 'white' }} />
-                    <button onClick={() => setView('home')}> <Home /> </button>
+                    <Link to='/'>Home</Link>
                 </div>
                 <div className='sidebar-text'> <SpeedIcon sx={{ color: 'white' }} />
-                    <button onClick={() => setView('dashboard')}> <Dashboards /> </button>
+                    <Link to='/dashboard'>Dashboard</Link>
                 </div>
                 <div className='sidebar-text'> <ShoppingCartOutlinedIcon sx={{ color: 'white' }} />
-                    <button onClick={() => setView('dashboard')}> <Dashboards /> </button>
+                    <Link to='/dashboard'>Transações</Link>
                 </div>
                 <div className='sidebar-text'> <SettingsIcon sx={{ color: 'white' }} />
-                    <button onClick={() => setView('dashboard')}> <Home /> </button>
+                    <Link to='/settings'>Configurações</Link>
                 </div>
             </div>
 
@@ -74,7 +75,6 @@ const Sidebar = () => {
                     </div>
                 </Drawer>
             </div>
-            {/* {renderView()} {/* Renderiza a view de acordo com o estado */}  
         </>
     )
 }
